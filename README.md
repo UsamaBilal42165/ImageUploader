@@ -2,26 +2,31 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
+## Setup
+  
+   Angular CLI: 13.1.4
+   Node: 16.13.1
+   Package Manager: npm 8.1.2
+   OS: win32 x64
+   Angular: 13.1.3
+   
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server
 
-## Code scaffolding
+## Details
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1)  The Code consists two components namely - 
+  a)  imagelist     -component represents image gallery.
+  b)  upload-image  -component contains upload image form.
 
-## Build
+2)  A service file (Services/image.service.ts) is being used to via http protocol to communicate with Backend APIs to store & fetch data. Data is being sent as a File       (Image) and text (Image Caption).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3)  upload-image component is a simple form with basic metrics to recieve user data.
 
-## Running unit tests
+4)  imagelist component fetches list of images as byte array along side their Image Captions as text/string...the byte array is converted to image for display prupose.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## End User change case;
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1)  initialize angular project to fetch all package.
+2)  API Endpoint is available as in Service file...this may change is current EndPoint is in use by localhost or Endpoint Port is being consumed by local IIS Manager         etc. 
