@@ -1,2 +1,3 @@
 # ImageUploader
 Angular Front-end | .NET 6 Backend program for creating image repository... 
+Functionality - Image Upload & Image Gallery
