@@ -1,0 +1,35 @@
+<div class="content" role="main" style="text-align: center;">
+  <div *ngIf="alertInfo===1" role="alert"
+    style="background-color: #49CC90; opacity: 0.9; width: 100%; border-radius: 25px;">
+    <h3>Data Saved Successfully!</h3>
+  </div>
+  <div *ngIf="alertInfo===2" role="alert"
+    style="background-color: #FF6B79; opacity: 0.9; width: 100%; border-radius: 25px;">
+    <h3>An Error has occured!</h3>
+  </div>
+  <div style="text-align: left; width: 100%;">
+    <button (click)="resetForm()"><img src="../../assets/Images/btn_Reset.png"
+        style="max-width: 50px; height: auto;" /></button>
+  </div>
+  <div style="text-align: right; width: 100%;">
+    <a routerLink="images"><img src="../assets/Images/btn_gallery.png" style="max-width: 50px; height: auto;" /></a>
+    <h5>Go To Gallery -></h5>
+  </div>
+  <form #imageForm="ngForm">
+    <div style="margin: 2vh;">
+      <input type="file" id="image" (change)="onImageChange($event)" ngModel name="image" required
+        style="display: none;" accept=".png,.jpg,.jpeg">
+      <img id="frame" src="{{framesrc}}"
+        style="max-width: 50%; height: auto; cursor: pointer; margin: 3vh; text-align: center;"
+        (click)="selectUploader($event)" />
+    </div>
+    <div style="margin: 2vh;">
+      <h4 for="name">Type File Name Here...</h4>
+      <input type="text" id="name" ngModel name="name" required
+        style="padding: 2vh; font-size: medium; background-color: whitesmoke; border-radius: 50%; width: 100%; text-align: center;">
+    </div>
+    <button type="submit" [disabled]="!imageForm.valid" (click)="uploadImage(imageForm.value)"
+      style="width: 30%; padding: 15px; margin: 2vh; border-radius: 12px; font-size: medium;">Save</button>
+    <h1>Please Upload desired Image & Write file Name...</h1>
+  </form>
+</div>

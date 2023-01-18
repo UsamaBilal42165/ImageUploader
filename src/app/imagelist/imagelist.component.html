@@ -1,0 +1,12 @@
+<div style="text-align: left; margin: 5%;">
+  <a routerLink="/" style="border: inset;">
+    <h1>Back Home</h1>
+  </a>
+</div>
+
+<div class="content" role="main" style="text-align: center;">
+  <div *ngFor="let image of images">
+    <h1>{{image.imageCaption}}</h1>
+    <img [src]="'data:image/png;base64,'+image.imageData" alt="{{image.ImageCaption}}">
+  </div>
+</div>
